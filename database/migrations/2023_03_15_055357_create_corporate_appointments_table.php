@@ -20,9 +20,8 @@ class CreateCorporateAppointmentsTable extends Migration
             $table->string('service_price', 255);
             $table->string('promo_code', 255);
             $table->string('cb', 255)->nullable();
-            $table->timestamp('cd');
             $table->string('ub', 255)->nullable();
-            $table->timestamp('ud');
+            $table->timestamps();
 
             $table->foreign('corporate_name_id')->references('id')->on('corporate_name');
             $table->foreign('bill_type_id')->references('id')->on('corporate_bill_type');

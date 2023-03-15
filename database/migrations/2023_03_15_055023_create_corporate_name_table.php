@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateConfirmationCallTable extends Migration
+class CreateCorporateNameTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateConfirmationCallTable extends Migration
      */
     public function up()
     {
-        Schema::create('confirmation_call', function (Blueprint $table) {
+        Schema::create('corporate_name', function (Blueprint $table) {
             $table->id();
-            $table->string('confirmation_call_status', 255);
+            $table->string('name', 255);
             $table->string('cb', 255)->nullable();
-            $table->timestamp('cd');
             $table->string('ub', 255)->nullable();
-            $table->timestamp('ud');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +29,6 @@ class CreateConfirmationCallTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('confirmation_call');
+        Schema::dropIfExists('corporate_name');
     }
 }

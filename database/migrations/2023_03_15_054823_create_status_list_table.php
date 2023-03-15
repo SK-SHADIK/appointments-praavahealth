@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInvoiceStatusTable extends Migration
+class CreateStatusListTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateInvoiceStatusTable extends Migration
      */
     public function up()
     {
-        Schema::create('invoice_status', function (Blueprint $table) {
+        Schema::create('status_list', function (Blueprint $table) {
             $table->id();
-            $table->string('invoice_status', 255);
+            $table->string('status_name', 255);
             $table->string('cb', 255)->nullable();
-            $table->timestamp('cd');
             $table->string('ub', 255)->nullable();
-            $table->timestamp('ud');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +29,6 @@ class CreateInvoiceStatusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invoice_status');
+        Schema::dropIfExists('status_list');
     }
 }

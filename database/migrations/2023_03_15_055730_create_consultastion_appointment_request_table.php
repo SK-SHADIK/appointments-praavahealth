@@ -23,9 +23,8 @@ class CreateConsultastionAppointmentRequestTable extends Migration
             $table->string('doctor_name', 255);
             $table->string('vc_link', 255);
             $table->string('cb', 255)->nullable();
-            $table->timestamp('cd');
             $table->string('ub', 255)->nullable();
-            $table->timestamp('ud');
+            $table->timestamps();
 
             $table->foreign('appointment_requests_id')->references('id')->on('appointment_request_list');
         });

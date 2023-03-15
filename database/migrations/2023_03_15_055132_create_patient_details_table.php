@@ -28,11 +28,11 @@ class CreatePatientDetailsTable extends Migration
             $table->string('patient_police_station', 255);
             $table->string('patient_upazila', 255);
             $table->string('cb', 255)->nullable();
-            $table->timestamp('cd');
             $table->string('ub', 255)->nullable();
-            $table->timestamp('ud');
-
+            $table->timestamps();
+            
             $table->primary('patient_upi');
+
         });
     }
 

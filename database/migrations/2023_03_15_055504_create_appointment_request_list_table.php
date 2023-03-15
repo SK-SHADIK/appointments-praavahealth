@@ -32,9 +32,9 @@ class CreateAppointmentRequestListTable extends Migration
             $table->unsignedBigInteger('corporate_appointment_id')->nullable();
             $table->unsignedBigInteger('client_type')->nullable();
             $table->string('cb', 255)->nullable();
-            $table->timestamp('cd');
             $table->string('ub', 255)->nullable();
-            $table->timestamp('ud');
+            $table->timestamps();
+
 
             $table->foreign('confirmation_call_status')->references('id')->on('confirmation_call');
             $table->foreign('payment_status')->references('id')->on('payment_status');

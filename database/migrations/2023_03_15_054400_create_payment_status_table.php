@@ -17,9 +17,8 @@ class CreatePaymentStatusTable extends Migration
             $table->id();
             $table->string('payment_status', 255);
             $table->string('cb', 255)->nullable();
-            $table->timestamp('cd');
             $table->string('ub', 255)->nullable();
-            $table->timestamp('ud');
+            $table->timestamps();
         });
     }
 
