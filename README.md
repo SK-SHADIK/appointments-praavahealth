@@ -34,9 +34,6 @@ DB_USERNAME=postgres<br>
 DB_PASSWORD=</p><br><br>
 
 <h3>Running migrations</h3>
-<p style="font-size:14px; border:2px solid #000; border-radius:10px; background:#000; padding: 10px;">php artisan migrate</p><br><br>
-
-<h3 >Run seeding for admin data</h3>
 <p style="font-size:14px; border:2px solid #000; border-radius:10px; background:#000; padding: 10px;">php artisan admin:install</p><br><br>
 
 <p>Start the server for development:</p>
