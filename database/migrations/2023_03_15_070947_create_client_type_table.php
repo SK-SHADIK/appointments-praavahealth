@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePaymentStatusTable extends Migration
+class CreateClientTypeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreatePaymentStatusTable extends Migration
      */
     public function up()
     {
-        Schema::create('payment_status', function (Blueprint $table) {
+        Schema::create('client_type', function (Blueprint $table) {
             $table->id();
-            $table->string('payment_status', 255);
+            $table->string('client_type_name', 255);
             $table->string('cb', 255)->nullable();
+            $table->timestamp('cd')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->string('ub', 255)->nullable();
-            $table->timestamps();
+            $table->timestamp('ud')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
@@ -29,6 +30,6 @@ class CreatePaymentStatusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payment_status');
+        Schema::dropIfExists('client_type');
     }
 }

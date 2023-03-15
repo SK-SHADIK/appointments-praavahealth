@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCorporateBillTypeTable extends Migration
+class CreateStatusListTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateCorporateBillTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('corporate_bill_type', function (Blueprint $table) {
+        Schema::create('status_list', function (Blueprint $table) {
             $table->id();
-            $table->string('bill_name', 255);
+            $table->string('status_name', 255);
             $table->string('cb', 255)->nullable();
+            $table->timestamp('cd')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->string('ub', 255)->nullable();
-            $table->timestamps();
+            $table->timestamp('ud')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
@@ -29,6 +30,6 @@ class CreateCorporateBillTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('corporate_bill_type');
+        Schema::dropIfExists('status_list');
     }
 }

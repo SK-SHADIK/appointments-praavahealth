@@ -19,11 +19,13 @@ class CreateServiceAppointmentRequestsTable extends Migration
             $table->string('service_type', 255);
             $table->string('home_sample_collection_address', 255);
             $table->string('cb', 255)->nullable();
+            $table->timestamp('cd')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->string('ub', 255)->nullable();
-            $table->timestamps();
+            $table->timestamp('ud')->default(DB::raw('CURRENT_TIMESTAMP'));
 
 
             $table->foreign('appointment_requests_id')->references('id')->on('appointment_request_list');
+    
         });
     }
 

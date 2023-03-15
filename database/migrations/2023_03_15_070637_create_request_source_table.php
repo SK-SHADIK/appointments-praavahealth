@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReferredByTable extends Migration
+class CreateRequestSourceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateReferredByTable extends Migration
      */
     public function up()
     {
-        Schema::create('referred_by', function (Blueprint $table) {
+        Schema::create('request_source', function (Blueprint $table) {
             $table->id();
-            $table->string('referred_by', 255);
+            $table->string('source_name', 255);
             $table->string('cb', 255)->nullable();
+            $table->timestamp('cd')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->string('ub', 255)->nullable();
-            $table->timestamps();
+            $table->timestamp('ud')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
@@ -29,6 +30,6 @@ class CreateReferredByTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('referred_by');
+        Schema::dropIfExists('request_source');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClientTypeTable extends Migration
+class CreateInvoiceStatusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateClientTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('client_type', function (Blueprint $table) {
+        Schema::create('invoice_status', function (Blueprint $table) {
             $table->id();
-            $table->string('client_type_name', 255);
+            $table->string('invoice_status', 255);
             $table->string('cb', 255)->nullable();
+            $table->timestamp('cd')->default(DB::raw('CURRENT_TIMESTAMP'));
+
             $table->string('ub', 255)->nullable();
-            $table->timestamps();
+            $table->timestamp('ud')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
@@ -29,6 +31,6 @@ class CreateClientTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('client_type');
+        Schema::dropIfExists('invoice_status');
     }
 }
