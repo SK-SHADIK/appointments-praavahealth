@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CancellationReasons extends Model
 {
-    use HasFactory;
+    protected $table = "cancellation_reasons";
+    const CREATED_AT = 'cd';
+    const UPDATED_AT = 'ud';
 }

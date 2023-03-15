@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ConfirmationCall extends Model
 {
-    use HasFactory;
+    protected $table = "confirmation_call";
+    const CREATED_AT = 'cd';
+    const UPDATED_AT = 'ud';
 }

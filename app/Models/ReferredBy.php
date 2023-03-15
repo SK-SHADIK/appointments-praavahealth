@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReferredBy extends Model
 {
-    use HasFactory;
+    protected $table = "referred_by";
+    const CREATED_AT = 'cd';
+    const UPDATED_AT = 'ud';
 }

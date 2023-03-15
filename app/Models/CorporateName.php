@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CorporateName extends Model
 {
-    use HasFactory;
+    protected $table = "corporate_name";
+    const CREATED_AT = 'cd';
+    const UPDATED_AT = 'ud';
 }

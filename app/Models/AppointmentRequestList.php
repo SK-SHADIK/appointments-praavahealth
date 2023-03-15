@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AppointmentRequestList extends Model
 {
-    use HasFactory;
+    protected $table = "appointment_request_list";
+    const CREATED_AT = 'cd';
+    const UPDATED_AT = 'ud';
 }

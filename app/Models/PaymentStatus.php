@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PaymentStatus extends Model
 {
-    use HasFactory;
+    protected $table = "payment_status";
+    const CREATED_AT = 'cd';
+    const UPDATED_AT = 'ud';
 }

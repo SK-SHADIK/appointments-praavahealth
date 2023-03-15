@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class StatusList extends Model
 {
-    use HasFactory;
+    protected $table = "status_list";
+    const CREATED_AT = 'cd';
+    const UPDATED_AT = 'ud';
 }
